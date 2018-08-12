@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean id="tempAddr" class="com.durgasoft.beans.Address"  >
+   <constructor-arg value="23/3rt" />
+   <constructor-arg value="mg road" />
+   <constructor-arg value="Bagalore" />
+   <constructor-arg value="karnataka" />
+   </bean>
+    <bean id="permAddr" class="com.durgasoft.beans.Address"  >
+   <constructor-arg value="23/45qa" />
+   <constructor-arg value="ps road" />
+   <constructor-arg value=" s r nagar" />
+   <constructor-arg value="hyd" />
+   </bean>
+   <bean id="stdBean"    class="com.durgasoft.beans.Student" > 
+  <property name="sid" value="11" />
+  <property name="sname" value="himanshu" />
+   <property name="std_Temp_Addr">
+     <ref bean="tempAddr" />
+   </property>
+   <property name="std_Perm_Addr" ref="permAddr" />
+   
+   <property name="squal" > 
+        <list>
+           <value>BTech</value>
+               <value>MTech</value>
+                <value>PHD</value>
+         </list>
+    </property>
+    
+    <property name="scourses" >
+      <set>
+       <value>Core Java</value>
+       <value>Adv Java</value>
+       <value>Spring</value>
+       <value>Hibernate</value>
+       <value>WebServices</value>
+     </set>    
+      </property>
+      
+      <property name="scourse_And_Faculty" >
+      <map>
+<entry key="Core Java" value="Ratan"/>
+<entry key="Adv Java" value="Durga"/>
+<entry key="Spring" value="Sriman"/>
+<entry key="Hibernate" value="Naveen"/>
+<entry key="Webservices" value="Naidu"/>
+</map>
+      </property>
+      
+      <property name="scourse_And_Cost" >
+      <props>
+        <prop  key="c">1000</prop>
+        <prop  key="c++0">2000</prop>
+        <prop  key="java">5000</prop>
+        <prop  key="Oracle">2000</prop>
+        </props>
+      </property>
+      </bean>   
+  </beans>
